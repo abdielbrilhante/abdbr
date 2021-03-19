@@ -1,0 +1,131 @@
+:root {
+  --desktop-bg: paleturquoise;
+
+  --terminal-titlebar: #E5E9F0;
+  --terminal-bg: #3B4252;
+  --terminal-fg: #ECEFF4;
+  --terminal-red: #BF616A;
+  --terminal-green: #A3BE8C;
+  --terminal-blue: #5E81AC;
+  --terminal-turquoise: #88C0D0;
+  --terminal-dim: #D8DEE9;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--desktop-bg);
+  color: var(--terminal-fg);
+  font-family: 'Work Sans', sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+.terminal-window {
+  box-shadow: 0 12px 24px -8px rgba(0, 10, 20, 0.75);
+  border-radius: 8px;
+
+  height: 80vh;
+  width: 70vw;
+}
+
+.terminal-titlebar {
+  background-color: var(--terminal-titlebar);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  color: var(--terminal-bg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+}
+
+.terminal-titlebar .clear-btn {
+  background-color: var(--terminal-fg);
+  border: 1px solid var(--terminal-blue);
+  border-radius: 2px;
+  color: var(--terminal-blue);
+  cursor: pointer;
+  font-weight: 500;
+  height: 20px;
+  line-height: 18px;
+  padding: 0 8px;
+
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.terminal-box {
+  background-color: var(--terminal-bg);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875rem;
+  height: calc(100% - 32px);
+  overflow: auto;
+  padding: 8px;
+}
+
+.error {
+  color: var(--terminal-red);
+}
+
+.command-line {
+  align-items: center;
+  display: flex;
+}
+
+.prompt {
+  color: var(--terminal-green);
+}
+
+.command-line input {
+  background: transparent;
+  border: none;
+  color: inherit;
+  flex: 1;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  padding: 0;
+}
+
+.repo a {
+  color: var(--terminal-turquoise);
+}
+
+.work-item {
+  color: var(--terminal-turquoise);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background:  #ECEFF4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BEC8DA;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D8DEE9;
+}
