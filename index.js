@@ -14,7 +14,7 @@ const elements = {
   },
 };
 
-const abdbr = {
+const abdielbr = {
   arguments: [
     ['help', 'Display help'],
     ['github', 'Fetch and display GitHub repository list'],
@@ -106,8 +106,8 @@ const programs = {
   echo(args) {
     return args.map((arg) => arg.startsWith('$') ? variables[arg] : arg).join(' ');
   },
-  abdbr(args) {
-    return abdbr.exec(args);
+  abdielbr(args) {
+    return abdielbr.exec(args);
   },
 };
 
@@ -165,7 +165,7 @@ function ghostWrite(command, index = 0) {
   } else if (index < command.length) {
     commandLine.value += command[index];
     commandLine.dispatchEvent(new KeyboardEvent('keyup', { key: command[index], bubbles: true }));
-    setTimeout(() => ghostWrite(command, index + 1), 20 - Math.round(Math.random() * 20));
+    setTimeout(() => ghostWrite(command, index + 1), 150 - Math.round(Math.random() * 20));
   }
 }
 
@@ -183,5 +183,5 @@ function main() {
     terminalOutput.innerHTML = '';
   });
 
-  ghostWrite('abdbr -a');
+  ghostWrite('abdielbr --help');
 }
